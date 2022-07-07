@@ -21,7 +21,7 @@ const SensorProvider = ({children}) => {
     const overChargeSensorsAction = () =>{
         
         const randomId = generateRandomInteger(quantityOfSensors);
-        console.log("randomId from overCharge: ", randomId)
+        //console.log("randomId from overCharge: ", randomId)
 
         if(randomId >= 8){
             let newArray = sensorsMiddle.map(data => {
@@ -40,7 +40,7 @@ const SensorProvider = ({children}) => {
     const offSensorsAction = () =>{
          
         const randomId = generateRandomInteger(quantityOfSensors);
-        console.log("randomId from offSensors: ", randomId)
+        //console.log("randomId from offSensors: ", randomId)
 
         if(randomId >= 8){
             let newArray = sensorsMiddle.map(data => {

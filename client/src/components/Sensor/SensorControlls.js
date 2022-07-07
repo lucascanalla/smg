@@ -16,8 +16,6 @@ const SensorControlls = ({
     const handleReset = () => initSensors()
     const handleAddSensors = () => {
         setMoreSensors(!moreSensors)
-        console.log("moreSensors: ", moreSensors)
-
         let newQuantity = moreSensors ? 8 : 16;
         setQuantityOfSensors(newQuantity) 
     }
