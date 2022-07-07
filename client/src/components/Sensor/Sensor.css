@@ -1,0 +1,28 @@
+.container-custom{
+    margin-top: 30px;
+    padding-bottom: 40px;
+    background-color: #3367994a;
+    padding-top: 40px;
+}
+
+.div-buttons{
+    display: grid;
+}
+
+.div-buttons button{
+    margin-bottom: 10px;
+}
+
+.sensor-permit-custom{
+    padding-bottom: 7px; 
+    padding-top: 7px; 
+    margin-top: 8px; 
+    margin-bottom: 8px; 
+    display: flex;
+    justify-content: center;
+}
+
+.sensor-permit-custom a p{
+    align-items: center;
+    display: flex;
+}
