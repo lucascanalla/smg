@@ -8,7 +8,6 @@ const SensorControlls = ({
     initSensors, 
     setMoreSensors, 
     moreSensors,
-    quantityOfSensors,
     setQuantityOfSensors
     }) => {
 
