@@ -13,10 +13,16 @@ const SensorContainer = () => {
     const { sensors, 
             sensorsMiddle,
             initSensors, 
-            failSensorsAction, 
+            overChargeSensorsAction, 
             offSensorsAction,
+            quantityOfSensors,
+            setQuantityOfSensors,
             permit 
         } = useContext(SensorContext)
+    
+    useEffect(() => {
+        initSensors();
+    }, [quantityOfSensors])
 
     return (
         <Container className='container-custom' fixed style={{marginTop: '30px'}}>
@@ -25,18 +31,21 @@ const SensorContainer = () => {
                     <SensorListItem Item={Item} sensors={sensors} />
                     {
                         moreSensors &&
-                            <SensorListItem Item={Item} sensors={sensorsMiddle} />
+                            <div style={{marginTop: '15px'}}>
+                                <SensorListItem Item={Item} sensors={sensorsMiddle} />
+                            </div>
                     }
                     <SensorPermit Item={Item} permit={permit} />
                 </Grid>
                 <Grid item xs={4}>
                     <Item>
                         <SensorControlls 
-                            failSensorsAction={failSensorsAction}
+                            overChargeSensorsAction={overChargeSensorsAction}
                             offSensorsAction={offSensorsAction}
                             initSensors={initSensors}
                             setMoreSensors={setMoreSensors}
                             moreSensors={moreSensors}
+                            setQuantityOfSensors={setQuantityOfSensors}
                         />
                     </Item>
                 </Grid>

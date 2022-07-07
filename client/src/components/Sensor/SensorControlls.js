@@ -2,12 +2,26 @@ import { Button } from '@mui/material';
 import React from 'react';
 import './Sensor.css'
 
-const SensorControlls = ({failSensorsAction, offSensorsAction, initSensors, setMoreSensors, moreSensors}) => {
+const SensorControlls = ({
+    overChargeSensorsAction, 
+    offSensorsAction, 
+    initSensors, 
+    setMoreSensors, 
+    moreSensors,
+    quantityOfSensors,
+    setQuantityOfSensors
+    }) => {
 
     const handleOff = () => offSensorsAction()
-    const handleFail = () => failSensorsAction()
+    const handleOverCharge = () => overChargeSensorsAction()
     const handleReset = () => initSensors()
-    const handleAddSensors = () => setMoreSensors(!moreSensors)
+    const handleAddSensors = () => {
+        setMoreSensors(!moreSensors)
+        console.log("moreSensors: ", moreSensors)
+
+        let newQuantity = moreSensors ? 8 : 16;
+        setQuantityOfSensors(newQuantity) 
+    }
 
     return (
         <>
@@ -15,10 +29,10 @@ const SensorControlls = ({failSensorsAction, offSensorsAction, initSensors, setM
         <h4>Simulador de Eventos</h4>
         <div className='div-buttons'>
             <Button variant='contained' onClick={handleOff}>
-                Sensor Apagado
+                Sensor Apagado/Falla
             </Button>
-            <Button variant='contained' onClick={handleFail}>
-                Sensor Falla
+            <Button variant='contained' onClick={handleOverCharge}>
+                Sensor Sobrellenado
             </Button>
             {/* <Button variant='contained' onClick={handleOk}>
                 Sensor Ok

@@ -9,8 +9,8 @@ const SensorItem = ({data}) => {
     const { id,
             on,
             status,
-            location,
-            description } = data
+            location 
+        } = data
 
     return (
         <Box style={{display: 'flex', justifyContent:'center'}}>
@@ -27,7 +27,7 @@ const SensorItem = ({data}) => {
 
                 {
                     !on &&
-                    <Tooltip title="Sensor Apagado" placement="top">
+                    <Tooltip title="Sensor Falla/Apagado" placement="top">
                         <Link to={''} >
                             <CircleIcon style={{color:'red'}} />
                         </Link>  
@@ -36,7 +36,7 @@ const SensorItem = ({data}) => {
 
                 {
                     on && !status &&  
-                    <Tooltip title="Sensor Falla Status" placement="top">
+                    <Tooltip title="Sensor Sobrellenado Status" placement="top">
                         <Link to={''} >
                             <CircleIcon style={{color:'yellow'}} />
                         </Link>
